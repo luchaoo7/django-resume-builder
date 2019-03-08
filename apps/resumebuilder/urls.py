@@ -33,6 +33,8 @@ urlpatterns = [
     url(r'^resume/$', resume_views.resume_view, name='resume'),
     url(r'^resume/item/edit/(\d+)/$', resume_views.resume_item_edit_view,
         name='resume-item-edit'),
+    url(r'^resume/edit/(\d+)/$', resume_views.resume_edit_view,
+        name='resume-edit'),
     url(r'^resume/item/create/$', resume_views.resume_item_create_view,
         name='resume-item-create'),
     url(r'^resume/create/$', resume_views.resume_create_view,
