@@ -27,8 +27,9 @@ urlpatterns = [
     url('^login/$', auth_views.LoginView.as_view(), name='login'),
     url('^logout/$', auth_views.LogoutView.as_view(), name='logout'),
 
-    url(r'^$', RedirectView.as_view(pattern_name='resume')),
+    url(r'^$', RedirectView.as_view(pattern_name='resumes')),
 
+    url(r'^resumes/$', resume_views.resumes_view, name='resumes'),
     url(r'^resume/$', resume_views.resume_view, name='resume'),
     url(r'^resume/item/edit/(\d+)/$', resume_views.resume_item_edit_view,
         name='resume-item-edit'),

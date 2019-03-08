@@ -19,6 +19,20 @@ def resume_view(request):
         'resume_items': resume_items
     })
 
+@login_required
+def resumes_view(request):
+    """
+    Handle a request to view list of user's resumes.
+    """
+    resumes = Resume.objects\
+        .filter(user=request.user)
+
+    return render(request, 'resume/resumes.html', {
+        'resumes': resumes
+    })
+
+
+
 
 @login_required
 def resume_item_create_view(request):
