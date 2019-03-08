@@ -2,8 +2,8 @@ from django.contrib.auth.decorators import login_required
 from django.http import Http404
 from django.shortcuts import render, redirect
 
-from .forms import ResumeItemForm
-from .models import ResumeItem
+from .forms import ResumeItemForm, ResumeForm
+from .models import ResumeItem, Resume
 
 
 @login_required
