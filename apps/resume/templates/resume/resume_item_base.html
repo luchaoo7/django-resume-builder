@@ -97,6 +97,27 @@ Base form template for creating and editing resume items.
           </div>
         </div>
       </div>
+      
+      <div class="row">
+        <div class="col-sm-12">
+          {{ form.resumes.errors }}
+          <div class="form-group">
+            <label for="resume" class="col-sm-1 control-label non-required">Resumes</label>
+            <div class="col-sm-11">
+                {% if resumes %}
+                    <select name="resume">
+                        {% for resume in resumes %}
+                        <option value="{{resume.id}}"> {{resume.title}}</option>
+                        {% endfor %}
+                    </select>
+                {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
 
       <div class="row">
         <div class="col-sm-12">
@@ -109,7 +130,7 @@ Base form template for creating and editing resume items.
               <button type="submit" class="btn btn-primary">
                 {% block resume_item_submit_button_text %}{% endblock %}
               </button>
-              <a class="btn btn-default" href="/resume/">Back</a>
+              <a class="btn btn-default" href="{% url 'resumes' %}">Back</a>
 
               {% block resume_item_additional_buttons %}{% endblock %}
             </div>
