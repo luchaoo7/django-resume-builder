@@ -47,6 +47,21 @@ Template for viewing a resume.
       margin-top: 24px;
       margin-bottom: 24px;
     }
+    
+    
+    section.resume-item > a.myBtn {
+      position: absolute;
+      right: 70px;
+      top: 0;
+    }
+
+    div.resume-container > a.myBtn {
+      margin-top: 24px;
+      margin-bottom: 24px;
+    }
+
+
+
   </style>
 {% endblock %}
 
@@ -74,6 +89,7 @@ Template for viewing a resume.
         </div>
         </div>
         <a class="btn btn-primary" href="{% url 'resume-edit' resume.id %}">Edit</a>
+        <a class="myBtn btn btn-primary" href="{% url 'resume-edit' resume.id %}">Rename</a>
       </section>
     {% endfor %}
 
